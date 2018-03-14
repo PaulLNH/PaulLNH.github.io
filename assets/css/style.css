@@ -1,4 +1,4 @@
-/* ---------------------------- INDEX.HTML STYLING ---------------------------- */
+/* ------------ MAIN ELEMENTS STYLING (CONCURENT ACROSS ALL PAGES) ------------ */
 
 body {
   /* default text settings per recommended-homework-assignment.md */
@@ -101,8 +101,7 @@ li a:hover {
 /* This element houses the Connect With Me sidebar */
 
 .contact {
-  clear: both;
-  overflow: auto;
+  /* Floating this right works, but not sure how it would do for responsive design. Looks great on my monitors */
   float: right;
   /* adds a background color, sets the element to an inline block and adjusts the sizing. */
   background-color: #ffffff;
@@ -138,29 +137,28 @@ img {
 /* ---------------------------- FOOTER ---------------------------- */
 
 footer {
-  /* Sets the footer properties, yet to make the blue border at top needs more testing */
+  /* Sets the footer properties, this is fixed to bottom of page, can test by going to contact page and making the message box bigger */
   position: fixed;
   bottom: 0px;
   background-color: #666666;
   padding: 40px;
   width: 100%;
+  /* Adds that blue bar above the footer to keep theme concurent  */
   border-top: 10px solid #4aaaa5;
 }
 
 #copyright {
-  /* centers copyright text */
+  /* centers copyright text, this is done as an ID so it overwrites previous styling */
   text-align: center;
 }
 
 #copyright a {
-  /* removes line on copyright text and adds color for better contrast (sorry, it's not a color in the assignment but it looks better) */
+  /* removes line on copyright link text and adds color for better contrast (sorry, it's not a color in the assignment but it looks better) */
   color: #acacac;
   text-decoration: none;
 }
 
-/* ---------------------------- INDEX.HTML STYLING ---------------------------- */
-
-/* ------------ ABOUT ME SECTION NOTE: THIS IS THE ONLY ELEMENT THAT CHANGES BETWEEN PAGES ------------ */
+/* ---------------------------- MAIN CONTAINING ELEMENT FOR EACH PAGE ---------------------------- */
 
 .about,
 .form,
@@ -170,49 +168,59 @@ footer {
   background-color: #ffffff;
   padding: 20px;
   margin-left: 20%;
+  margin-bottom: 5%;
   display: inline-block;
   align-content: center;
   /* THIS NEEDS TO BE CHANGED -- 960px WAS FORTHE ENTIRE LENGTH OF THE "EASY" HOMEWORK, FIND ADJUSTMENTS FOR RECCOMENDED!! */
   width: 640px;
 }
 
+/* ---------------------------- INDEX.HTML STYLING ---------------------------- */
+
+/* ------------ ABOUT ME SECTION NOTE: THIS IS THE ONLY ELEMENT THAT CHANGES BETWEEN PAGES ------------ */
+
 #profileImg {
   /* adjusts the size and orientation of the profile picture */
   width: 200px;
   height: 203px;
-  float: left;
   margin-right: 20px;
   margin-bottom: 20px;
+  /* Allows text to flow around it */
+  float: left;
 }
 
 /* ---------------------------- CONTACT.HTML STYLING ---------------------------- */
 
+/* ------------ CONTACT FORM NOTE: THIS IS THE ONLY ELEMENT THAT CHANGES BETWEEN PAGES ------------ */
+
 label {
   /* All labels have the same size and alignment */
   display: inline-block;
+  /* Don't really need the width here in this instance, but would be a good thing in a responsive enviornment */
   width: 100%;
-  /* Ensure this is the same size as the button elements below (for trial and error on page) */
   text-align: left;
   margin-bottom: 5px;
 }
 
 input,
 textarea {
-  /* All text fields have the same font settings */
-  font-family: "Arial", "Helvetica Neue", "Helvetica", "sans-serif";
-  color: #777777;
-  /* Same size to text fields */
+  /* Ghost text for examples */
+  color: #77777783;
+  /* Have fields match the div width */
   width: 100%;
   box-sizing: border-box;
   /* Text borders */
   border: 1px solid #999;
   padding: 5px;
+  /* This margin allows the fields to appear seperate from one another and paired with their coresponding label*/
   margin-bottom: 15px;
+  /* Better UX when they can't resize the box to mess with the width of the page */
+  resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-  /* Highlight on active elements */
+  /* Highlight on active elements - allows the user to see where they are typing faster than searching for the blinky line */
   border-color: #000;
 }
 
@@ -224,6 +232,7 @@ textarea {
 }
 
 button {
+  /* Border color is so it can have a hover property and not get all wonky */
   background-color: #4aaaa5;
   border: 2px solid #4aaaa5;
   color: white;
@@ -235,8 +244,10 @@ button {
 }
 
 button:hover {
+  /* Changes the color of the button when moused over */
   background-color: white;
   color: #4aaaa5;
+  /* Just incase the button changing color wasn't indicator enough that they were moused over, give them a pointy finger to click with too! */
   cursor: pointer;
 }
 
@@ -244,31 +255,49 @@ button:hover {
 
 /* ------------ PORTFOLIO GRID NOTE: THIS IS THE ONLY ELEMENT THAT CHANGES BETWEEN PAGES ------------ */
 
+/* Using ID to overwrite the img class CSS - Possibly a better way to do this, especailly if there were a lot of these on the page */
+
 #deals,
 #gym,
-#stars {
-  width: 310px;
-  height: 220px;
-  float: left;
-  margin-bottom: 20px;
-}
-
+#stars,
 #esports,
 #hike {
-  width: 310px;
-  height: 220px;
-  float: right;
-  margin-bottom: 20px;
+  /* sets the size of these images to the container size (Don't worry, we pre-defined the container to match the resolution of the photos) */
+  width: 100%;
+  height: 100%
 }
 
-.dealsWrap {
-  /* Logo nested in the menu bar */
-  font-family: "Georgia", "Times", "Times New Roman", "serif";
-  font-weight: bolder;
+/* BELOW IS (no longer) TRIAL CODE */
+
+/* Container (div) holding the image and the text */
+
+.container {
+  /* Sets the positioning of the element */
+  position: relative;
+  float: left;
+  /* This is our image resolution size to perfectly fit inside our div with 20px gap on all sides */
+  width: 310px;
+  height: 220px;
+  /* Ok, I lied... this is the one thing I got tripped up on. Didn't want to make each element an ID like I did above made 10px border because adding 20px would throw off my edges*/
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Text Banner on the image */
+
+.text-block {
+  /* Sets positioning of the banner text on the image containers */
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+  left: 0px;
+  /* Banner text styling */
   background-color: #4aaaa5;
   color: white;
-  width: 100%;
-  padding: 20px;
-  font-size: 2em;
+  font-size: 1.5em;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  /* No need to have the type curser active on these */
   cursor: default;
 }

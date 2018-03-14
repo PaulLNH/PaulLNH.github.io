@@ -13,32 +13,36 @@
 </head>
 
 <body>
-  <!-- Navigation bar to display in the upper right -->
+  <!-- Navigation bar or "menu" bar -->
   <ul>
     <!-- Name as the logo to display in upper left w/ box around it. -->
     <div id="logo">Paul Laird</div>
+    <!-- don't ask why these are in backward order, my floats in CSS put them that way... We'll just roll with it no one will know from a UI/UX perspective -->
     <li>
+      <!-- link to contact form -->
       <a href="contact.html">Contact</a>
     </li>
     <li class="divider">|</li>
     <li>
+      <!-- Link to portfolio grid page -->
       <a href="portfolio.html">Portfolio</a>
     </li>
     <li class="divider">|</li>
     <li>
+      <!-- Link to the home page / about me page -->
       <a href="index.html">About</a>
     </li>
   </ul>
 
 
 
-  <!-- Contact Form section ensure that this is it's own element -->
+  <!-- START OF CONTACT FORM - THIS IS THE UNIQUE ELEMENT TO THIS PAGE -->
   <section class="form">
     <!-- About Me header -->
     <h1>Contact</h1>
     <!-- Horizontal line -->
     <hr>
-    <form action="/my-handling-form-page" method="post">
+    <form action="mailto:plaird83@gmail.com" method="post" enctype="text/plain">
       <div>
         <label for="name">Name</label>
         <input type="text" id="name" name="user_name" onfocus="this.value=''" value="John Smith">
@@ -56,8 +60,9 @@
       </div>
     </form>
   </section>
+  <!-- END OF CONTACT FORM - THIS IS THE UNIQUE ELEMENT TO THIS PAGE -->
 
-  <!-- Contact me section -->
+  <!-- START OF CONNECT WITH ME SIDE BAR -->
   <div class="contact">
     <!-- Heading, needs to be centered -->
     <h2>Connect with Me</h2>
@@ -79,16 +84,19 @@
       <img src="assets/images/stackoverflow.png" alt="See what I have to say on Stack Overflow">
     </a>
   </div>
+  <!-- END OF CONNECT WITH ME SIDE BAR -->
 
-  <!-- Footer object bg color #666666 -->
+  <!-- START OF COPYRIGHT FOOTER -->
   <footer>
     <div id="copyright">
-      <!-- small copyright text -->
+      <!-- Links to my deployed page (although this is outside the scope of this assignment) - also opens it in a new window -->
       <a href="http://laird.codes" target="_blank">
+        <!-- small copyright text -->
         <small>&copy; Copyright 2018 Paul Laird</small>
       </a>
     </div>
   </footer>
+  <!-- END OF COPYRIGHT FOOTER -->
 </body>
 
 </html>
