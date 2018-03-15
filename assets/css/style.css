@@ -279,8 +279,7 @@ button:hover {
   width: 310px;
   height: 220px;
   /* Ok, I lied... this is the one thing I got tripped up on. Didn't want to make each element an ID like I did above made 10px border because adding 20px would throw off my edges*/
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
@@ -300,4 +299,16 @@ button:hover {
   padding-bottom: 15px;
   /* No need to have the type curser active on these */
   cursor: default;
+}
+
+/* Evening out the grid, adding margins on right/left based on position so the edges can be lined up with the content wall */
+
+.colOne {
+  /* These are the grid spaces in the left most column, needs spacing to the right */
+  margin-right: 10px;
+}
+
+.colTwo {
+  /* These are the grid spaces in the right most column, needs spacing to the left */
+  margin-left: 10px;
 }
