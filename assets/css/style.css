@@ -35,7 +35,7 @@ h2 {
   font-weight: bolder;
   background-color: #4aaaa5;
   color: white;
-  margin-left: 20%;
+  margin-left: 15%;
   padding: 20px;
   font-size: 2em;
   /* This sets the logo to the top of the screen and aligns it with the main element section */
@@ -106,7 +106,7 @@ li a:hover {
   /* adds a background color, sets the element to an inline block and adjusts the sizing. */
   background-color: #ffffff;
   padding: 20px;
-  margin-right: 25%;
+  margin-right: 15%;
   display: inline-block;
   text-align: center;
 }
@@ -167,7 +167,7 @@ footer {
   /* adds a background color, sets the element to an inline block and adjusts the sizing. */
   background-color: #ffffff;
   padding: 20px;
-  margin-left: 20%;
+  margin-left: 15%;
   margin-bottom: 5%;
   display: inline-block;
   align-content: center;
